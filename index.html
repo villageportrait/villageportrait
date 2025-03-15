@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village Portrait Photography</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Village Portrait</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="slideshow-container">
+                <!-- Image placeholders for slideshow -->
+                <div class="slide">
+                    <img src="../images/placeholder1.jpg" alt="Slideshow Image 1">
+                </div>
+                <div class="slide">
+                    <img src="../images/placeholder2.jpg" alt="Slideshow Image 2">
+                </div>
+                <div class="slide">
+                    <img src="../images/placeholder3.jpg" alt="Slideshow Image 3">
+                </div>
+            </div>
+            <div class="hero-content">
+                <h2>Capturing Life's Beautiful Moments</h2>
+                <p>Professional portrait photography for families, couples, and individuals</p>
+                <a href="#contact" class="btn">Book a Session</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Village Portrait</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="../images/about-placeholder.jpg" alt="About Image">
+                    </div>
+                    <div class="about-text">
+                        <p>Village Portrait is dedicated to capturing the essence of your special moments. With years of experience and a passion for photography, we create timeless images that tell your unique story.</p>
+                        <p>Our approach is natural, relaxed, and focused on bringing out authentic emotions and connections in every session.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <h2>Portfolio</h2>
+                <div class="portfolio-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="family">Family</button>
+                    <button class="category-btn" data-category="couples">Couples</button>
+                    <button class="category-btn" data-category="individual">Individual</button>
+                </div>
+                <div class="portfolio-grid">
+                    <!-- Portfolio image placeholders -->
+                    <div class="portfolio-item" data-category="family">
+                        <img src="../images/portfolio-placeholder1.jpg" alt="Portfolio Image 1">
+                    </div>
+                    <div class="portfolio-item" data-category="family">
+                        <img src="../images/portfolio-placeholder2.jpg" alt="Portfolio Image 2">
+                    </div>
+                    <div class="portfolio-item" data-category="couples">
+                        <img src="../images/portfolio-placeholder3.jpg" alt="Portfolio Image 3">
+                    </div>
+                    <div class="portfolio-item" data-category="couples">
+                        <img src="../images/portfolio-placeholder4.jpg" alt="Portfolio Image 4">
+                    </div>
+                    <div class="portfolio-item" data-category="individual">
+                        <img src="../images/portfolio-placeholder5.jpg" alt="Portfolio Image 5">
+                    </div>
+                    <div class="portfolio-item" data-category="individual">
+                        <img src="../images/portfolio-placeholder6.jpg" alt="Portfolio Image 6">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2>Client Testimonials</h2>
+                <div class="testimonials-slider">
+                    <div class="testimonial">
+                        <p>"The photos captured our family perfectly. We couldn't be happier with the results!"</p>
+                        <cite>- The Johnson Family</cite>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Our engagement photos were absolutely stunning. The photographer made us feel so comfortable."</p>
+                        <cite>- Sarah & Michael</cite>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Professional, creative, and a joy to work with. Highly recommend!"</p>
+                        <cite>- Emma T.</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p><strong>Email:</strong> info@villageportrait.com</p>
+                        <p><strong>Phone:</strong> (555) 123-4567</p>
+                        <p><strong>Location:</strong> Village Square, Anytown</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">Facebook</a>
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">Pinterest</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Village Portrait Photography. All rights reserved.</p>
+            <p>Website design inspired by <a href="https://villageportrait.mypixieset.com/">Village Portrait</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
