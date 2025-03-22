@@ -122,14 +122,14 @@ a {
 /* Slideshow Section */
 .slideshow-section {
     background-color: #1a1a1a;
-    padding: 7rem 0;
+    padding: 2rem 0; /* Reduced from 7rem to minimize vertical space */
 }
 
 .slideshow-container {
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    height: 1200px; /* 4:5 ratio for 960px width */
+    max-width: 1400px; /* Increased from 1200px */
+    height: 800px; /* Matches new image height (4:5 ratio for 640px width) */
     margin: 0 auto;
     overflow: hidden;
 }
@@ -138,16 +138,16 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 960px; /* 80% of 1200px, maintains 4:5 ratio */
-    height: 1200px; /* Matches 4:5 ratio */
-    transform: translateX(125%); /* Default off-screen (1200px / 960px) */
+    width: 640px; /* 4:5 ratio, ~45.7% of 1400px, leaves room for gaps */
+    height: 800px; /* Matches 4:5 ratio */
+    transform: translateX(218.75%); /* Default off-screen (1400px / 640px) */
     transition: transform 0.5s ease;
 }
 
 .slide img {
-    width: 100%; /* Fills slide width (960px) */
-    height: 100%; /* Fills slide height (1200px) */
-    object-fit: contain; /* Preserves 4:5 ratio without cropping */
+    width: 100%; /* Fills slide width (640px) */
+    height: 100%; /* Fills slide height (800px) */
+    object-fit: contain; /* Preserves 4:5 ratio */
 }
 
 .slideshow-nav {
@@ -155,10 +155,11 @@ a {
     justify-content: space-between;
     width: 65%;
     max-width: 800px;
-    margin: 2.5rem auto 0;
+    margin: 1rem auto 0; /* Reduced from 2.5rem */
     position: relative;
 }
 
+/* Navigation Buttons */
 .prev, .next {
     cursor: pointer;
     width: 25px;
@@ -178,6 +179,36 @@ a {
 .prev:hover, .next:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: rgba(255, 255, 255, 0.7);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .slideshow-section {
+        padding: 1rem 0; /* Further reduced on mobile */
+    }
+
+    .slideshow-container {
+        width: 90%; /* Slightly narrower on mobile */
+        height: auto; /* Let height adjust to content */
+        max-height: 800px; /* Cap height */
+    }
+
+    .slide {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Auto height to maintain ratio */
+        max-height: 800px; /* Match container cap */
+        transform: translateX(100%); /* Adjusted for full-width slides */
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto; /* Maintains 4:5 ratio dynamically */
+        max-height: 800px;
+    }
+
+    .slideshow-nav {
+        margin: 0.5rem auto 0; /* Reduced spacing */
+    }
 }
 
 /* Fade Animation */
