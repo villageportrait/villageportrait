@@ -236,7 +236,6 @@ img {
     color: #a67c52;
 }
 
-
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -298,7 +297,6 @@ img {
     font-weight: 600;
     color: #a67c52;
 }
-
 
 /* Contact Section */
 .contact-section {
