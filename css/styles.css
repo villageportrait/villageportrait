@@ -120,7 +120,6 @@ a {
 }
 
 /* Slideshow Section */
-/* Slideshow Section */
 .slideshow-section {
     background-color: #1a1a1a;
     padding: 7rem 0;
@@ -130,6 +129,7 @@ a {
     position: relative;
     width: 100%;
     max-width: 800px;
+    height: 1200px;
     margin: 0 auto;
     overflow: hidden;
 }
