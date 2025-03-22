@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create placeholder images for the slideshow
     createPlaceholderImages();
     
-    // Show the first slide
+    // Show the initial slide setup
     showSlides(slideIndex);
 });
 
@@ -14,28 +14,23 @@ document.addEventListener('DOMContentLoaded', function() {
 function createPlaceholderImages() {
     const slides = document.querySelectorAll('.slide');
     
-    // Check if images already exist
     slides.forEach((slide, index) => {
         const img = slide.querySelector('img');
         if (img.src.includes('slide')) {
-            // Create a canvas element to generate a placeholder image
             const canvas = document.createElement('canvas');
             canvas.width = 800;
             canvas.height = 600;
             const ctx = canvas.getContext('2d');
             
-            // Set background color based on slide index
             const colors = ['#444', '#555', '#666'];
             ctx.fillStyle = colors[index % colors.length];
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
-            // Add text to indicate it's a placeholder
             ctx.fillStyle = '#fff';
             ctx.font = '30px Times New Roman';
             ctx.textAlign = 'center';
             ctx.fillText(`Portrait Slide ${index + 1}`, canvas.width / 2, canvas.height / 2);
             
-            // Convert canvas to data URL and set as image source
             img.src = canvas.toDataURL('image/png');
         }
     });
@@ -46,26 +41,42 @@ function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Show a specific slide
+// Show slides with previous and next partially visible
 function showSlides(n) {
-    let i;
     const slides = document.getElementsByClassName("slide");
+    const totalSlides = slides.length;
     
-    // Loop back to the first slide if we've gone past the end
-    if (n > slides.length) {
+    // Loop back to the first slide if past the end
+    if (n > totalSlides) {
         slideIndex = 1;
     }
-    
-    // Loop to the last slide if we've gone before the first
+    // Loop to the last slide if before the first
     if (n < 1) {
-        slideIndex = slides.length;
+        slideIndex = totalSlides;
     }
     
-    // Hide all slides
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    // Reset all slides' styles
+    for (let i = 0; i < totalSlides; i++) {
+        slides[i].style.opacity = "0"; // Fade out by default
+        slides[i].style.transform = "translateX(100%)"; // Move off-screen to the right
+        slides[i].style.position = "absolute"; // Stack them
+        slides[i].style.transition = "opacity 0.5s ease, transform 0.5s ease"; // Smooth transition
     }
     
-    // Show the current slide
-    slides[slideIndex - 1].style.display = "block";
+    // Calculate indices for previous, current, and next slides
+    const currentIndex = slideIndex - 1;
+    const prevIndex = (slideIndex - 2 + totalSlides) % totalSlides; // Wrap around
+    const nextIndex = slideIndex % totalSlides; // Wrap around
+    
+    // Position and show the previous slide (partially visible on the left)
+    slides[prevIndex].style.opacity = "0.5"; // Slightly faded
+    slides[prevIndex].style.transform = "translateX(-50%)"; // Half off-screen to the left
+    
+    // Position and show the current slide (fully visible in the center)
+    slides[currentIndex].style.opacity = "1";
+    slides[currentIndex].style.transform = "translateX(0)";
+    
+    // Position and show the next slide (partially visible on the right)
+    slides[nextIndex].style.opacity = "0.5"; // Slightly faded
+    slides[nextIndex].style.transform = "translateX(50%)"; // Half off-screen to the right
 }
