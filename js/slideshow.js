@@ -49,32 +49,36 @@ function showSlides(n) {
 
     // Position all slides
     [...slides].forEach((slide, i) => {
-        slide.style.position = 'absolute';
-        slide.style.top = '0';
-        slide.style.transition = 'transform 0.5s ease';
-        slide.style.display = 'block';
+        slide.style.display = 'block'; // Ensure visibility
 
         if (isMobile) {
+            // Mobile: Show only current slide, no sliding
+           |slide.style.position = 'relative';
             slide.style.width = '100%';
             slide.style.height = 'auto';
+            slide.style.transform = 'none';
+            slide.style.transition = 'none';
             if (i === currentIndex) {
-                slide.style.transform = 'translateX(0)';
-                slide.style.zIndex = '2';
+                slide.style.display = 'block'; // Show current slide
             } else {
-                slide.style.transform = 'translateX(100%)';
-                slide.style.zIndex = '0';
+                slide.style.display = 'none'; // Hide others
             }
         } else {
-            slide.style.width = '640px'; // Fixed width for desktop
-            slide.style.height = '800px'; // Matches 4:5 ratio
+            // Desktop: Sliding with centered current slide
+            slide.style.position = 'absolute';
+            slide.style.top = '0';
+            slide.style.width = '640px';
+            slide.style.height = '800px';
+            slide.style.transition = 'transform 0.5s ease';
+
             if (i === currentIndex) {
-                slide.style.transform = 'translateX(320px)'; // Adjusted to center with equal gaps
+                slide.style.transform = 'translateX(380px)'; // Center in 1400px container
                 slide.style.zIndex = '2';
             } else if (i === prevIndex) {
                 slide.style.transform = 'translateX(-380px)'; // Half visible with 60px gap
                 slide.style.zIndex = '1';
             } else if (i === nextIndex) {
-                slide.style.transform = 'translateX(1020px)'; // Half visible with 60px gap
+                slide.style.transform = 'translateX(1140px)'; // Half visible with 60px gap
                 slide.style.zIndex = '1';
             } else {
                 slide.style.transform = 'translateX(218.75%)'; // Fully off-screen
