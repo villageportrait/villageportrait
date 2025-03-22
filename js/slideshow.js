@@ -35,13 +35,36 @@ function createPlaceholderImages() {
 // Next/previous controls
 const plusSlides = n => showSlides(slideIndex += n);
 
-// Show specific slide
+// Show slides with previous/next partially visible and gaps
 function showSlides(n) {
     const slides = document.getElementsByClassName('slide');
     if (!slides.length) return;
 
     slideIndex = n > slides.length ? 1 : n < 1 ? slides.length : n;
+    const currentIndex = slideIndex - 1;
+    const prevIndex = (slideIndex - 2 + slides.length) % slides.length;
+    const nextIndex = slideIndex % slides.length;
 
-    [...slides].forEach(slide => slide.style.display = 'none');
-    slides[slideIndex - 1].style.display = 'block';
+    // Position all slides with gaps
+    [...slides].forEach((slide, i) => {
+        slide.style.position = 'absolute';
+        slide.style.top = '0';
+        slide.style.width = '90%'; // Match CSS
+        slide.style.transition = 'transform 0.5s ease';
+        slide.style.display = 'block';
+
+        if (i === currentIndex) {
+            slide.style.transform = 'translateX(5%)'; // Center with slight offset
+            slide.style.zIndex = '2';
+        } else if (i === prevIndex) {
+            slide.style.transform = 'translateX(-50%)'; // Half visible on left with gap
+            slide.style.zIndex = '1';
+        } else if (i === nextIndex) {
+            slide.style.transform = 'translateX(60%)'; // Half visible on right with gap
+            slide.style.zIndex = '1';
+        } else {
+            slide.style.transform = 'translateX(111.11%)'; // Fully off-screen
+            slide.style.zIndex = '0';
+        }
+    });
 }
