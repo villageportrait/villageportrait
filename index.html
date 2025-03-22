@@ -3,161 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Village Portrait Photography</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>Village Portrait - Jesse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <h1 class="site-title">Village Portrait</h1>
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="profile-container">
+            <div class="profile-image">
+                <!-- Profile image placeholder -->
+                <img src="images/profile.jpg" alt="Jesse's Portrait">
+            </div>
+            <div class="profile-text">
+                <h1>Hello, I'm Jesse. I'm a photographer, husband, father, & friend.</h1>
+                <p>For as long as I can remember, people have told me I look familiar. More often than not, this sparks conversations where strangers unexpectedly share stories and things they never intended to reveal; sometimes even thoughts they've never spoken aloud. I used to wonder why this happened so often, but I've come to realize it's not really about me. It's about something deeper: the longing to be known, understood, and truly seen.</p>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="slideshow-container">
-                <!-- Image placeholders for slideshow -->
-                <div class="slide">
-                    <img src="images/placeholder1.jpg" alt="Slideshow Image 1">
-                </div>
-                <div class="slide">
-                    <img src="images/placeholder2.jpg" alt="Slideshow Image 2">
-                </div>
-                <div class="slide">
-                    <img src="images/placeholder3.jpg" alt="Slideshow Image 3">
-                </div>
-            </div>
-            <div class="hero-content">
-                <h2>Capturing Life's Beautiful Moments</h2>
-                <p>Professional portrait photography for families, couples, and individuals</p>
-                <a href="#contact" class="btn">Book a Session</a>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2>About Village Portrait</h2>
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="images/about-placeholder.jpg" alt="About Image">
-                    </div>
-                    <div class="about-text">
-                        <p>Village Portrait is dedicated to capturing the essence of your special moments. With years of experience and a passion for photography, we create timeless images that tell your unique story.</p>
-                        <p>Our approach is natural, relaxed, and focused on bringing out authentic emotions and connections in every session.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="portfolio-section">
-            <div class="container">
-                <h2>Portfolio</h2>
-                <div class="portfolio-categories">
-                    <button class="category-btn active" data-category="all">All</button>
-                    <button class="category-btn" data-category="family">Family</button>
-                    <button class="category-btn" data-category="couples">Couples</button>
-                    <button class="category-btn" data-category="individual">Individual</button>
-                </div>
-                <div class="portfolio-grid">
-                    <!-- Portfolio image placeholders -->
-                    <div class="portfolio-item" data-category="family">
-                        <img src="images/portfolio-placeholder1.jpg" alt="Portfolio Image 1">
-                    </div>
-                    <div class="portfolio-item" data-category="family">
-                        <img src="images/portfolio-placeholder2.jpg" alt="Portfolio Image 2">
-                    </div>
-                    <div class="portfolio-item" data-category="couples">
-                        <img src="images/portfolio-placeholder3.jpg" alt="Portfolio Image 3">
-                    </div>
-                    <div class="portfolio-item" data-category="couples">
-                        <img src="images/portfolio-placeholder4.jpg" alt="Portfolio Image 4">
-                    </div>
-                    <div class="portfolio-item" data-category="individual">
-                        <img src="images/portfolio-placeholder5.jpg" alt="Portfolio Image 5">
-                    </div>
-                    <div class="portfolio-item" data-category="individual">
-                        <img src="images/portfolio-placeholder6.jpg" alt="Portfolio Image 6">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="testimonials-section">
-            <div class="container">
-                <h2>Client Testimonials</h2>
-                <div class="testimonials-slider">
-                    <div class="testimonial">
-                        <p>"The photos captured our family perfectly. We couldn't be happier with the results!"</p>
-                        <cite>- The Johnson Family</cite>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Our engagement photos were absolutely stunning. The photographer made us feel so comfortable."</p>
-                        <cite>- Sarah & Michael</cite>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Professional, creative, and a joy to work with. Highly recommend!"</p>
-                        <cite>- Emma T.</cite>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <div class="contact-content">
-                    <div class="contact-form">
-                        <form id="contact-form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn">Send Message</button>
-                        </form>
-                    </div>
-                    <div class="contact-info">
-                        <h3>Get in Touch</h3>
-                        <p><strong>Email:</strong> info@villageportrait.com</p>
-                        <p><strong>Phone:</strong> (555) 123-4567</p>
-                        <p><strong>Location:</strong> Village Square, Anytown</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">Facebook</a>
-                            <a href="#" class="social-link">Instagram</a>
-                            <a href="#" class="social-link">Pinterest</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 Village Portrait Photography. All rights reserved.</p>
-            <p>Website design inspired by <a href="https://villageportrait.mypixieset.com/">Village Portrait</a></p>
+    <!-- Three Column Text Section -->
+    <section class="three-column">
+        <div class="column">
+            <p>Village Portrait isn't about performance or perfection, but a chance to be photographed honestly & authentically. Social media pressures us to polish & curate, to present only the most agreeable version of ourselves. But there is something far more beautiful in authenticity.</p>
         </div>
-    </footer>
+        <div class="column">
+            <p>When you place these portraits side by side, patterns emerge. Common threads appear. They remind us that we are all more connected than we might think. A good portrait does not flatter, it reveals. It captures something deeper than appearance; something real.</p>
+        </div>
+        <div class="column">
+            <p>Reminding myself to be present, open, and embrace what I real has shaped my view of the world. The more I slow down and listen, the more everything makes sense. I want to meet as many people as I can, learn from their experiences, and share the wisdom found in their stories.</p>
+        </div>
+    </section>
 
-    <script src="../js/main.js"></script>
+    <!-- Image Slideshow Section -->
+    <section class="slideshow-section">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="images/slide1.jpg" alt="Portrait 1">
+            </div>
+            <div class="slide fade">
+                <img src="images/slide2.jpg" alt="Portrait 2">
+            </div>
+            <div class="slide fade">
+                <img src="images/slide3.jpg" alt="Portrait 3">
+            </div>
+        </div>
+        <!-- Navigation arrows below slideshow -->
+        <div class="slideshow-nav">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-info">
+            <div class="submission-info">
+                <h2>Village Portrait is <span class="open-text">open</span> for submissions.</h2>
+                <p>Please include a photograph of yourself, and some of your story.</p>
+                <p>I am also available for hire, in which you I can bring a studio setup to your home, office, or event.</p>
+            </div>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>e-mail</h3>
+                    <a href="mailto:jesse@villageportrait.com">jesse@villageportrait.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3>text</h3>
+                    <a href="tel:5862191782">(586) 219-1782</a>
+                </div>
+                <div class="contact-item">
+                    <h3>studio</h3>
+                    <p>Royal Oak, Michigan</p>
+                </div>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/villageportrait" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/villageportrait" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <script src="js/slideshow.js"></script>
+    <script src="js/scroll-reveal.js"></script>
 </body>
 </html>
