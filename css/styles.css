@@ -35,14 +35,9 @@ a {
 }
 
 .reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.social-links.reveal-visible {
-    display: flex !important; /* Ensure visibility persists */
     opacity: 1 !important;
     transform: translateY(0) !important;
+    display: block !important; /* Ensures visibility persists */
 }
 
 /* Header Section */
