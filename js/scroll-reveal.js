@@ -1,9 +1,11 @@
-// Scroll Reveal Animation
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.profile-container, .column, .slideshow-container, .contact-info, .social-links');
 
     // Add initial hidden state
-    animatedElements.forEach(el => el.classList.add('reveal-hidden'));
+    animatedElements.forEach(el => {
+        el.classList.add('reveal-hidden');
+        el.dataset.revealed = 'false'; // Track if revealed
+    });
 
     // Check if element is in viewport (80% threshold)
     const isInViewport = el => {
@@ -14,9 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle scroll animation
     const handleScrollAnimation = () => {
         animatedElements.forEach(el => {
-            if (isInViewport(el) && el.classList.contains('reveal-hidden')) {
+            if (el.dataset.revealed === 'false' && isInViewport(el)) {
                 el.classList.remove('reveal-hidden');
                 el.classList.add('reveal-visible');
+                el.dataset.revealed = 'true'; // Mark as revealed
             }
         });
     };
