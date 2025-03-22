@@ -52,12 +52,12 @@ a {
     align-items: center;
     gap: 7rem;
     width: 85%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .profile-image {
-    flex: 0 0 300px;
+    flex: 0 0 400px;
 }
 
 .profile-image img {
