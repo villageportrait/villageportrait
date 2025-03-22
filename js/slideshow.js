@@ -16,8 +16,8 @@ function createPlaceholderImages() {
         if (!img.src.includes('slide')) return;
 
         const canvas = document.createElement('canvas');
-        canvas.width = 800;
-        canvas.height = 600;
+        canvas.width = 960; // Matches slide width
+        canvas.height = 1200; // Matches 4:5 ratio
         const ctx = canvas.getContext('2d');
 
         ctx.fillStyle = colors[index % colors.length];
@@ -49,21 +49,22 @@ function showSlides(n) {
     [...slides].forEach((slide, i) => {
         slide.style.position = 'absolute';
         slide.style.top = '0';
-        slide.style.width = '90%'; // Match CSS
+        slide.style.width = '960px'; // Fixed width for 4:5 ratio
+        slide.style.height = '1200px'; // Matches 4:5 ratio
         slide.style.transition = 'transform 0.5s ease';
         slide.style.display = 'block';
 
         if (i === currentIndex) {
-            slide.style.transform = 'translateX(5%)'; // Center with slight offset
+            slide.style.transform = 'translateX(120px)'; // Center with 60px left gap
             slide.style.zIndex = '2';
         } else if (i === prevIndex) {
-            slide.style.transform = 'translateX(-50%)'; // Half visible on left with gap
+            slide.style.transform = 'translateX(-480px)'; // Half visible on left with 60px gap
             slide.style.zIndex = '1';
         } else if (i === nextIndex) {
-            slide.style.transform = 'translateX(60%)'; // Half visible on right with gap
+            slide.style.transform = 'translateX(600px)'; // Half visible on right with 60px gap
             slide.style.zIndex = '1';
         } else {
-            slide.style.transform = 'translateX(111.11%)'; // Fully off-screen
+            slide.style.transform = 'translateX(125%)'; // Fully off-screen
             slide.style.zIndex = '0';
         }
     });
