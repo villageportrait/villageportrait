@@ -16,7 +16,7 @@ function createPlaceholderImages() {
         if (!img.src.includes('slide')) return;
 
         const canvas = document.createElement('canvas');
-        canvas.width = 640; // Matches new slide width
+        canvas.width = 640; // Matches desktop slide width
         canvas.height = 800; // Matches 4:5 ratio
         const ctx = canvas.getContext('2d');
 
@@ -47,7 +47,7 @@ function showSlides(n) {
 
     const isMobile = window.innerWidth <= 768;
 
-    // Position all slides with gaps
+    // Position all slides
     [...slides].forEach((slide, i) => {
         slide.style.position = 'absolute';
         slide.style.top = '0';
@@ -55,26 +55,26 @@ function showSlides(n) {
         slide.style.display = 'block';
 
         if (isMobile) {
-            slide.style.width = '100%'; // Full width on mobile
-            slide.style.height = 'auto'; // Auto height
+            slide.style.width = '100%';
+            slide.style.height = 'auto';
             if (i === currentIndex) {
                 slide.style.transform = 'translateX(0)';
                 slide.style.zIndex = '2';
             } else {
-                slide.style.transform = 'translateX(100%)'; // Off-screen
+                slide.style.transform = 'translateX(100%)';
                 slide.style.zIndex = '0';
             }
         } else {
             slide.style.width = '640px'; // Fixed width for desktop
             slide.style.height = '800px'; // Matches 4:5 ratio
             if (i === currentIndex) {
-                slide.style.transform = 'translateX(380px)'; // Center with 380px left gap
+                slide.style.transform = 'translateX(320px)'; // Adjusted to center with equal gaps
                 slide.style.zIndex = '2';
             } else if (i === prevIndex) {
-                slide.style.transform = 'translateX(-260px)'; // Half visible with 60px gap
+                slide.style.transform = 'translateX(-380px)'; // Half visible with 60px gap
                 slide.style.zIndex = '1';
             } else if (i === nextIndex) {
-                slide.style.transform = 'translateX(1080px)'; // Half visible with 60px gap
+                slide.style.transform = 'translateX(1020px)'; // Half visible with 60px gap
                 slide.style.zIndex = '1';
             } else {
                 slide.style.transform = 'translateX(218.75%)'; // Fully off-screen
