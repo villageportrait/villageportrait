@@ -120,6 +120,7 @@ a {
 }
 
 /* Slideshow Section */
+/* Slideshow Section */
 .slideshow-section {
     background-color: #1a1a1a;
     padding: 7rem 0;
@@ -130,18 +131,24 @@ a {
     width: 65%;
     max-width: 800px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
+    height: 600px;
+    overflow: hidden;
 }
 
 .slide {
-    display: none;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%; /* Reduced from 100% to create gap */
+    height: 100%;
+    transform: translateX(111.11%); /* Adjusted default off-screen position (100% / 0.9) */
+    transition: transform 0.5s ease;
 }
 
 .slide img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 .slideshow-nav {
