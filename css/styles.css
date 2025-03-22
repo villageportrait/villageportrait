@@ -128,8 +128,8 @@ a {
 .slideshow-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
-    height: 1200px;
+    max-width: 12000px;
+    height: 800px;
     margin: 0 auto;
     overflow: hidden;
 }
