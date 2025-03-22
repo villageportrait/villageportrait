@@ -126,13 +126,6 @@ a {
     width: 100%;
 }
 
-/* Slideshow Section */
-.slideshow-section {
-    background-color: #1a1a1a;
-    padding: 7rem 0;
-    width: 100%;
-}
-
 .slideshow-container {
     position: relative;
     width: 65%;
