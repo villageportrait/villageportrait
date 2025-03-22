@@ -271,7 +271,6 @@ a {
 .social-icon {
     color: white;
     font-size: 2rem;
-    transition: 0.3s ease;
 }
 
 .social-icon:hover {
