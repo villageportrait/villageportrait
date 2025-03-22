@@ -320,10 +320,6 @@ a {
         width: 90%;
     }
     
-    .profile-image {
-        flex: 0 0 100%;
-    }
-    
     .three-column {
         flex-direction: column;
         gap: 3rem;
