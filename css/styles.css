@@ -6,6 +6,12 @@
 }
 
 /* Scroll Reveal Animation */
+.social-links.reveal-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: flex !important; /* Ensure it stays visible */
+}
+
 .reveal-hidden {
     opacity: 0;
     transform: translateY(30px);
