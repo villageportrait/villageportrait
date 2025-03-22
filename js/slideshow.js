@@ -13,11 +13,11 @@ function createPlaceholderImages() {
 
     slides.forEach((slide, index) => {
         const img = slide.querySelector('img');
-        if (!img.src.includes('slide')) return;
+        if (!img || img.src.includes('slide')) return; // Skip if already set
 
         const canvas = document.createElement('canvas');
-        canvas.width = 640; // Matches desktop slide width
-        canvas.height = 800; // Matches 4:5 ratio
+        canvas.width = 640;
+        canvas.height = 800;
         const ctx = canvas.getContext('2d');
 
         ctx.fillStyle = colors[index % colors.length];
@@ -38,7 +38,10 @@ const plusSlides = n => showSlides(slideIndex += n);
 // Show slides with previous/next partially visible and gaps
 function showSlides(n) {
     const slides = document.getElementsByClassName('slide');
-    if (!slides.length) return;
+    if (!slides.length) {
+        console.error('No slides found');
+        return;
+    }
 
     slideIndex = n > slides.length ? 1 : n < 1 ? slides.length : n;
     const currentIndex = slideIndex - 1;
@@ -47,22 +50,15 @@ function showSlides(n) {
 
     const isMobile = window.innerWidth <= 768;
 
-    // Position all slides
     [...slides].forEach((slide, i) => {
-        slide.style.display = 'block'; // Ensure visibility
-
         if (isMobile) {
-            // Mobile: Show only current slide, no sliding
-           |slide.style.position = 'relative';
+            // Mobile: Show only current slide
+            slide.style.position = 'static';
             slide.style.width = '100%';
             slide.style.height = 'auto';
             slide.style.transform = 'none';
             slide.style.transition = 'none';
-            if (i === currentIndex) {
-                slide.style.display = 'block'; // Show current slide
-            } else {
-                slide.style.display = 'none'; // Hide others
-            }
+            slide.style.display = i === currentIndex ? 'block' : 'none';
         } else {
             // Desktop: Sliding with centered current slide
             slide.style.position = 'absolute';
@@ -70,18 +66,19 @@ function showSlides(n) {
             slide.style.width = '640px';
             slide.style.height = '800px';
             slide.style.transition = 'transform 0.5s ease';
+            slide.style.display = 'block'; // Always visible, positioned
 
             if (i === currentIndex) {
-                slide.style.transform = 'translateX(380px)'; // Center in 1400px container
+                slide.style.transform = 'translateX(380px)'; // Centered in 1400px
                 slide.style.zIndex = '2';
             } else if (i === prevIndex) {
-                slide.style.transform = 'translateX(-380px)'; // Half visible with 60px gap
+                slide.style.transform = 'translateX(-380px)'; // Half visible, 60px gap
                 slide.style.zIndex = '1';
             } else if (i === nextIndex) {
-                slide.style.transform = 'translateX(1140px)'; // Half visible with 60px gap
+                slide.style.transform = 'translateX(1140px)'; // Half visible, 60px gap
                 slide.style.zIndex = '1';
             } else {
-                slide.style.transform = 'translateX(218.75%)'; // Fully off-screen
+                slide.style.transform = 'translateX(218.75%)'; // Off-screen
                 slide.style.zIndex = '0';
             }
         }
