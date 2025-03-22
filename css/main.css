@@ -182,6 +182,7 @@ img {
 
 .about-image {
     flex: 1;
+    border: 5px solid white;
 }
 
 .about-text {
