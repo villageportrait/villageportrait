@@ -129,9 +129,9 @@ a {
     position: relative;
     width: 100%;
     max-width: 1400px;
-    height: 800px; /* Desktop height for 640x800px slides */
+    height: 800px; /* Desktop height */
     margin: 0 auto;
-    overflow: hidden;
+    overflow: hidden; /* Keep for desktop sliding */
 }
 
 .slide {
@@ -140,15 +140,16 @@ a {
     left: 0;
     width: 640px; /* 4:5 ratio for desktop */
     height: 800px; /* Matches 4:5 ratio */
-    transform: translateX(218.75%); /* Default off-screen (1400px / 640px) */
+    transform: translateX(218.75%); /* Default off-screen */
     transition: transform 0.5s ease;
+    display: block; /* Ensure base visibility */
 }
 
 .slide img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* Preserves 4:5 ratio */
-    display: block;
+    display: block; /* Remove any spacing */
 }
 
 .slideshow-nav {
@@ -190,17 +191,16 @@ a {
 
     .slideshow-container {
         width: 90%;
-        height: auto; /* Adjusts to content */
-        min-height: 0;
-        overflow: visible; /* Ensure slides aren’t hidden */
+        height: auto; /* Fit content */
+        overflow: visible; /* Ensure visibility */
     }
 
     .slide {
-        position: relative; /* Switch to relative for mobile flow */
+        position: static; /* Normal flow on mobile */
         width: 100%;
         height: auto;
-        transform: none; /* Remove transform on mobile */
-        transition: none; /* No sliding on mobile */
+        transform: none; /* No sliding */
+        transition: none;
     }
 
     .slide img {
