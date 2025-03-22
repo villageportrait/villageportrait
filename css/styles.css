@@ -155,7 +155,7 @@ a {
 .slideshow-nav {
     display: flex;
     justify-content: space-between;
-    width: 65%;
+    width: 100%;
     max-width: 1400px;
     margin: 1rem auto 0;
     position: relative;
