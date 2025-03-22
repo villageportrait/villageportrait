@@ -129,7 +129,7 @@ a {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    height: 800px;
+    height: 1200px; /* 4:5 ratio for 960px width */
     margin: 0 auto;
     overflow: hidden;
 }
@@ -138,15 +138,16 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 90%; /* Reduced from 100% to create gap */
-    height: 100%;
-    transform: translateX(111.11%); /* Adjusted default off-screen position (100% / 0.9) */
+    width: 960px; /* 80% of 1200px, maintains 4:5 ratio */
+    height: 1200px; /* Matches 4:5 ratio */
+    transform: translateX(125%); /* Default off-screen (1200px / 960px) */
     transition: transform 0.5s ease;
 }
 
 .slide img {
-    height: 800px;
-    object-fit: cover;
+    width: 100%; /* Fills slide width (960px) */
+    height: 100%; /* Fills slide height (1200px) */
+    object-fit: contain; /* Preserves 4:5 ratio without cropping */
 }
 
 .slideshow-nav {
