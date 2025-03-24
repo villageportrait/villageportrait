@@ -1,5 +1,7 @@
 // JavaScript for Image Slideshow
 let slideIndex = 1;
+let touchStartX = 0;
+let touchEndX = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     // Add lazy loading to images
@@ -17,7 +19,35 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         showSlides(slideIndex);
     });
+
+    // Add touch event listeners for mobile swipe functionality
+    const slideContainer = document.querySelector('.slideshow-container');
+    if (slideContainer) {
+        // Touch start event
+        slideContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        // Touch end event
+        slideContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+    }
 });
+
+// Handle swipe direction
+function handleSwipe() {
+    const swipeThreshold = 50; // Minimum distance required for a swipe
+    
+    if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left - go to next slide
+        plusSlides(1);
+    } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right - go to previous slide
+        plusSlides(-1);
+    }
+}
 
 // Next/previous controls
 const plusSlides = n => showSlides(slideIndex += n);
