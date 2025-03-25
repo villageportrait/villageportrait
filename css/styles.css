@@ -6,10 +6,11 @@
 }
 
 body {
-    font-family: 'EB Garamond', 'Times New Roman', Times, serif;
+    font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
     line-height: 1.6;
     color: #555; /* Changed from #333 to #555 for softer contrast */
     background-color: #fff; /* Kept original background color */
+    overflow-x: hidden; /* Prevent horizontal scroll during parallax */
 }
 
 h1, h2, h3 {
@@ -51,6 +52,9 @@ a {
     justify-content: center;
     padding: 8rem 0;
     background-color: #f0f0f0; /* Kept original background color */
+    position: relative; /* Added for parallax effect */
+    z-index: 1; /* Added for parallax effect */
+    will-change: transform, opacity; /* Optimize for animations */
 }
 
 .profile-container {
@@ -96,6 +100,9 @@ a {
     width: 90%;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative; /* Added for parallax effect */
+    z-index: 2; /* Higher than header for parallax effect */
+    background-color: #fff; /* Ensure background is solid */
 }
 
 .column {
@@ -126,6 +133,8 @@ a {
     padding: 7rem 0;
     max-height: 100vh;
     overflow: hidden;
+    position: relative; /* Added for parallax effect */
+    z-index: 2; /* Higher than header for parallax effect */
 }
 
 .slideshow-container {
@@ -207,6 +216,8 @@ a {
     background-color: #111; /* Kept original background color */
     color: #e0e0e0; /* Changed from white to light grey as requested */
     padding: 7rem 0;
+    position: relative; /* Added for parallax effect */
+    z-index: 2; /* Higher than header for parallax effect */
 }
 
 .contact-info {
@@ -327,7 +338,7 @@ a {
     }
     
     .profile-container {
-        flex-direction: column;
+        flex-direction: column-reverse; /* Changed to column-reverse to show text before image */
         gap: 2rem; /* Reduced from 3rem */
         width: 90%;
     }
