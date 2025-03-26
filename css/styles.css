@@ -129,7 +129,7 @@ a {
 
 /* Slideshow Section */
 .slideshow-section {
-    background-color: #1a1a1a; /* Kept original background color */
+    background-color: #121212; /* Darkened to pure gray with no saturation */
     padding: 7rem 0;
     max-height: 100vh;
     overflow: hidden;
@@ -213,7 +213,7 @@ a {
 
 /* Contact Section */
 .contact-section {
-    background-color: #111; /* Kept original background color */
+    background-color: #0a0a0a; /* Darkened from #111 to #0a0a0a */
     color: #e0e0e0; /* Changed from white to light grey as requested */
     padding: 7rem 0;
     position: relative; /* Added for parallax effect */
@@ -353,10 +353,11 @@ a {
     
     .three-column {
         flex-direction: column;
-        gap: 3rem;
+        gap: 1rem; /* Further reduced from 1.5rem to reduce negative space between paragraphs */
+        padding: 3rem 0; /* Reduced from 7rem to reduce header and footer space */
     }
     .column {
-        padding: 3rem 0;
+        padding: 1rem 0; /* Further reduced from 1.5rem to reduce negative space */
     }
     .column:not(:last-child)::after {
         top: auto;
